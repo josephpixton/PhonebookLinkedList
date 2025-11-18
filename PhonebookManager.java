@@ -128,13 +128,21 @@ public class PhonebookManager {
     }
 
     // Print list
-    public void printList() {
-        ListNode current = head;
-        int index = 0;
-        while (current != null) {
-            System.out.println("[" + index + "] " + current);
-            current = current.next;
-            index++;
-        }
+  public void printList() {
+    System.out.printf("%-5s %-15s %-15s %-20s %-15s %-10s %-15s%n",
+                      "Index", "First Name", "Last Name", "Street", "City", "Zip", "Phone");
+    System.out.println("-------------------------------------------------------------------------------------------");
+    ListNode current = head;
+    int index = 0;
+    while (current != null) {
+        System.out.printf("%-5d %-15s %-15s %-20s %-15s %-10s %-15s%n",
+                          index, current.firstName, current.lastName,
+                          current.streetAddress, current.city,
+                          current.zipCode, current.phoneNumber);
+        current = current.next;
+        index++;
     }
 }
+
+}
+
